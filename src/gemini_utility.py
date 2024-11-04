@@ -3,12 +3,16 @@ import json
 
 import google.generativeai as genai
 
+headers = {
+  "authorization":st.secrets["GOOGLE_API_KEY"],
+  "content-type":"application/json"
+}
 
 working_directory = os.path.dirname(os.path.abspath(__file__))
 config_data = json.load(open(f"{working_directory}/config.json"))
 GOOGLE_API_KEY = config_data['GOOGLE_API_KEY']
 
-genai.configure(api_key = GOOGLE_API_KEY)
+genai.configure(api_key = headers["authorization"])
 
 def load_gemini_pro_model():
     gemini_pro_model = genai.GenerativeModel('gemini-pro')
