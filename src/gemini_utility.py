@@ -2,6 +2,7 @@ import os
 import json
 
 import google.generativeai as genai
+import streamlit as st
 
 headers = {
   "authorization":st.secrets["GOOGLE_API_KEY"],
