@@ -8,9 +8,12 @@ from streamlit_option_menu import option_menu
 from gemini_utility import (load_gemini_pro_model,
                             load_gemini_pro_vision_model,
                             embeddings_response,
-                            gemini_pro_response)
+                            gemini_pro_response,
+                            load_environment)
+
 
 working_directory = os.path.dirname(os.path.abspath(__file__))
+load_environment()
 
 st.set_page_config(
     page_title = "Gemini AI",
