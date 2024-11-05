@@ -11,7 +11,7 @@ headers = {
 
 working_directory = os.path.dirname(os.path.abspath(__file__))
 # config_data = json.load(open(f"{working_directory}/config.json"))
-# GOOGLE_API_KEY = config_data['GOOGLE_API_KEY']
+GOOGLE_API_KEY = config_data['GOOGLE_API_KEY']
 
 genai.configure(api_key = headers["authorization"])
 
