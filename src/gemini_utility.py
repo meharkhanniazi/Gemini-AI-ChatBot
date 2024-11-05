@@ -2,18 +2,17 @@ import os
 import json
 
 import google.generativeai as genai
-import streamlit as st
+from dotenv import load_dotenv
 
-headers = {
-  "authorization":st.secrets["GOOGLE_API_KEY"],
-  "content-type":"application/json"
-}
+def load_environment():
+    load_dotenv()
 
-working_directory = os.path.dirname(os.path.abspath(__file__))
+
+# working_directory = os.path.dirname(os.path.abspath(__file__))
 # config_data = json.load(open(f"{working_directory}/config.json"))
-GOOGLE_API_KEY = config_data['GOOGLE_API_KEY']
+# GOOGLE_API_KEY = config_data['GOOGLE_API_KEY']
 
-genai.configure(api_key = headers["authorization"])
+genai.configure(api_key = os.getenv("GOOGLE_API_KEY"))
 
 def load_gemini_pro_model():
     gemini_pro_model = genai.GenerativeModel('gemini-pro')
