@@ -2,3 +2,4 @@ google-generativeai == 0.8.3
 pillow == 10.4.0
 streamlit == 1.39.0
 streamlit-option-menu == 0.4.0
+python-dotenv
